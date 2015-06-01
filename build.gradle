@@ -8,6 +8,9 @@ buildscript {
     }
 }
 
+// This becomes part of the tag name in the docker container. 
+group = 'ctv-internship'
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -39,9 +42,6 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
-
-// This becomes part of the tag name in the docker container. 
-group = 'ctv-internship'
 
 task buildDocker(type: Docker, dependsOn: build) {
 	push = true
