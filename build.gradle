@@ -4,7 +4,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
-        classpath("se.transmode.gradle:gradle-docker:1.2")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
     }
 }
 
@@ -40,17 +40,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
 
-// This becomes part 
+// This becomes part of the tag name in the docker container. 
 group = 'ctv-internship'
 
 task buildDocker(type: Docker, dependsOn: build) {
 	push = true
 	applicationName = jar.baseName
-	dockerFile = file('src/main/docker/Dockerfile')
+	dockerfile = file('src/main/docker/Dockerfile')
 	doFirst {
 		copy {
 			from jar
 			into stageDir
-		}
-	}
+    	}
+  	}
 }
