@@ -17,7 +17,7 @@ import com.ctv.todos.repository.TodoRepository;
 /**
  * This is the receiver of our REST calls.   
  * 
- * It ties together the logic an persistence mechanisms for our service.
+ * It ties together the logic and persistence mechanisms for our service.
  * @author Macon Pegram
  */
 @RestController
