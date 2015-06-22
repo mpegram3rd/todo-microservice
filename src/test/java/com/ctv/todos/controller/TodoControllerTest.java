@@ -118,6 +118,7 @@ public class TodoControllerTest {
     public void testAddDone() throws Exception {
 
         final Todo expectedTodo = new Todo();
+        expectedTodo.setDone(true);
 
         // Define mock behavior.
         when(mockRepository.save(expectedTodo)).thenReturn(expectedTodo);
